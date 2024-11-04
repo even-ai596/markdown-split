@@ -8,10 +8,9 @@ with open(file_path, 'r', encoding='utf-8') as file:
 from langchain.text_splitter import MarkdownTextSplitter
 
 markdown_splitter = MarkdownTextSplitter(chunk_size=100, chunk_overlap=20)
-docs = markdown_splitter.create_documents([markdown_text])
+docs = markdown_splitter.split_text ([markdown_text])
 for i, doc in enumerate(docs):
     print(f"块 {i+1}:\n{doc.page_content}\n{'-'*50}")
-    
     
 import json
 
